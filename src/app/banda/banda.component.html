@@ -1,0 +1,39 @@
+<div class="container ">
+  <div clas="row">
+  <div class="col-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">id</th>
+          <th class="h4">Name</th>
+          <th class="h4">Number of members</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let banda of bandas">
+          <td>
+            <dd>{{banda.id}}</dd>
+          </td>
+          <td>
+            <dd (click)="onSelected(banda)">{{banda.name}}</dd>
+          </td>
+          <td>
+            <dd>{{banda.numberOfMembers}}</dd>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="col">
+    <div *ngIf="selected" >
+      <app-banda-Detail [bandaDetail]="selectedBanda"></app-banda-Detail>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>
+<h6>
+  Average number of members (rounded up): {{average}}
+</h6>
